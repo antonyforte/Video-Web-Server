@@ -1,6 +1,6 @@
 Before testing the server first:
 
-1 - Create a directory named static. and add videos to this directory
+1 - Create a directory named static inside servidorpag/. and add videos to this directory
 2 - In html/Files.html behind line 164(div class="return") modify the link and add your video links. example:
 
 in the code is:
