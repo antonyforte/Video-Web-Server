@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Meu Querido Servidor Web</title>
+  <style>
+    body {
+      background-color: #000000;
+      font-family: Arial, sans-serif;
+      color: #FFFFFF;
+      margin: 0;
+      padding: 0;
+    }
+
+    .return button{
+      background-color: #FFD700;
+    }
+    .return a{
+      color: #C70039;
+      text-decoration: none;
+    }
+    .video-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding: 20px;
+    }
+
+    .video-card {
+      width: calc(33.33% - 20px);
+      background-color: #C70039;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+      margin-bottom: 20px;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    .video-card button {
+        background-color: #000080;
+        color: #000000;
+        text-decoration: none;
+    }
+    .video-card button a{
+        color: #000000;
+        text-decoration: none;
+    }
+
+    .video-title {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #ffd900;
+    }
+
+    .video-controls {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    .video-controls button {
+      margin: 0 5px;
+      padding: 5px 10px;
+      background-color: #000080;
+      color: #000000;
+      border: none;
+      cursor: pointer;
+    }
+
+    .video-controls button:hover {
+      background-color: #000000;
+      color: #0000FF;
+    }
+
+    .download-link {
+      margin-top: 10px;
+    }
+
+    .download-link a {
+      color: #FFD700;
+      text-decoration: none;
+    }
+
+    .download-link a:hover {
+      text-decoration: underline;
+    }
+
+    #videoPlayer {
+      background-color: #000080;
+      color: #FFD700;
+      font-style: oblique;
+      font-size: 30px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    #videoPlayer .video-title {
+      font-size: 24px;
+      font-weight: bold;
+      color: #FF0000;
+      margin-bottom: 20px;
+    }
+
+    #videoPlayer video {
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    #videoPlayer button {
+      margin-top: 20px;
+      background-color: #000000;
+      color: #000080;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      margin: auto;
+    }
+
+    #videoPlayer button:hover {
+      background-color: #FFD700;
+    }
+  </style>
+
+
+
+
+</head>
+<body>
+    <nav>
+    </nav>
+    <div id="videoPlayer">SUMMERTIME RENDER</div>
+  <script>
+    var videoPlayerDiv = document.getElementById("videoPlayer");
+    var videoElement;
+
+    function openVideoPlayer(videoUrl, videoTitle) {
+      videoElement = document.createElement("video");
+      videoElement.controls = true;
+      videoElement.autoplay = true;
+      videoElement.innerHTML = "<source src='" + videoUrl + "' type='video/mp4'>";
+
+      var videoTitleElement = document.createElement("div");
+      videoTitleElement.textContent = videoTitle;
+      videoTitleElement.classList.add("video-title");
+
+      var closeButton = document.createElement("button");
+      closeButton.textContent = "Fechar";
+      closeButton.onclick = closeVideoPlayer;
+
+      videoPlayerDiv.innerHTML = "";
+      videoPlayerDiv.appendChild(videoTitleElement);
+      videoPlayerDiv.appendChild(videoElement);
+      videoPlayerDiv.appendChild(closeButton);
+
+      var navbar = document.querySelector("nav");
+      navbar.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function closeVideoPlayer() {
+      videoPlayerDiv.innerHTML = "";
+    }
+  </script>
+  <div class="return">
+    <button><a href="/hello">Voltar</a></button>
+  </div>
+  <div class="video-wrapper">
+    <div class="video-card">
+      <div class="video-title">SummerTime Render EPS 1</div>
+      <button onclick="openVideoPlayer('/static/summertime-render-episode-1-sub.mp4', 'SummerTime Render EPS 1')">Assistir</button>
+      <button><a href="static/summertime-render-episode-1-sub.mp4" download>Baixar</a></button>
+    </div>
+
+<div class="video-card">
+  <div class="video-title">SummerTime Render EPS 2</div>
+  <button onclick="openVideoPlayer('/static/summertime-render-episode-2-sub.mp4', 'SummerTime Render EPS 2')">Assistir</button>
+  <button><a href="static/summertime-render-episode-2-sub.mp4" download>Baixar</a></button>
+</div>
+
+<div class="video-card">
+  <div class="video-title">SummerTime Render EPS 3</div>
+  <button onclick="openVideoPlayer('/static/summertime-render-episode-3-sub.mp4', 'SummerTime Render EPS 3')">Assistir</button>
+  <button><a href="static/summertime-render-episode-3-sub.mp4" download>Baixar</a></button>
+</div>
+
+<div class="video-card">
+    <div class="video-title">SummerTime Render EPS 4</div>
+    <button onclick="openVideoPlayer('/static/summertime-render-episode-4-sub.mp4', 'SummerTime Render EPS 4')">Assistir</button>
+    <button><a href="static/summertime-render-episode-4-sub.mp4" download>Baixar</a></button>
+  </div>
+
+  <div class="video-card">
+    <div class="video-title">SummerTime Render EPS 5</div>
+    <button onclick="openVideoPlayer('/static/summertime-render-episode-5-sub.mp4', 'SummerTime Render EPS 5')">Assistir</button>
+    <button><a href="static/summertime-render-episode-5-sub.mp4" download>Baixar</a></button>
+  </div>
+
+  <div class="video-card">
+    <div class="video-title">SummerTime Render EPS 6</div>
+    <button onclick="openVideoPlayer('/static/summertime-render-episode-6-sub.mp4', 'SummerTime Render EPS 6')">Assistir</button>
+    <button><a href="static/summertime-render-episode-6-sub.mp4" download>Baixar</a></button>
+  </div>
+
+  <div class="video-card">
+    <div class="video-title">SummerTime Render EPS 7</div>
+    <button onclick="openVideoPlayer('/static/summertime-render-episode-7-sub.mp4', 'SummerTime Render EPS 7')">Assistir</button>
+    <button><a href="static/summertime-render-episode-7-sub.mp4" download>Baixar</a></button>
+  </div>
+
+
+  <div class="video-card">
+    <div class="video-title">SummerTime Render EPS 8</div>
+    <button onclick="openVideoPlayer('/static/summertime-render-episode-8-sub.mp4', 'SummerTime Render EPS 8')">Assistir</button>
+    <button><a href="static/summertime-render-episode-8-sub.mp4" download>Baixar</a></button>
+  </div>
+
+  <div class="video-card">
+    <div class="video-title">SummerTime Render EPS 9</div>
+    <button onclick="openVideoPlayer('/static/summertime-render-episode-9-sub.mp4', 'SummerTime Render EPS 9')">Assistir</button>
+    <button><a href="static/summertime-render-episode-9-sub.mp4" download>Baixar</a></button>
+  </div>
+
+  <div class="video-card">
+    <div class="video-title">SummerTime Render EPS 10</div>
+    <button onclick="openVideoPlayer('/static/summertime-render-episode-10-sub.mp4', 'SummerTime Render EPS 10')">Assistir</button>
+    <button><a href="static/summertime-render-episode-10-sub.mp4" download>Baixar</a></button>
+  </div>
+
+  <div class="video-card">
+    <div class="video-title">SummerTime Render EPS 11</div>
+    <button onclick="openVideoPlayer('/static/summertime-render-episode-11-sub.mp4', 'SummerTime Render EPS 11')">Assistir</button>
+    <button><a href="static/summertime-render-episode-11-sub.mp4" download>Baixar</a></button>
+  </div>
+
+  <div class="video-card">
+    <div class="video-title">SummerTime Render EPS 12</div>
+    <button onclick="openVideoPlayer('/static/summertime-render-episode-12-sub.mp4', 'SummerTime Render EPS 12')">Assistir</button>
+    <button><a href="static/summertime-render-episode-12-sub.mp4" download>Baixar</a></button>
+  </div>
+
+  <div class="video-card">
+    <div class="video-title">SummerTime Render EPS 13</div>
+    <button onclick="openVideoPlayer('/static/summertime-render-episode-13-sub.mp4', 'SummerTime Render EPS 13')">Assistir</button>
+    <button><a href="static/summertime-render-episode-13-sub.mp4" download>Baixar</a></button>
+  </div>
+
+  <div class="video-card">
+    <div class="video-title">SummerTime Render EPS 14</div>
+    <button onclick="openVideoPlayer('/static/summertime-render-episode-14-sub.mp4', 'SummerTime Render EPS 14')">Assistir</button>
+    <button><a href="static/summertime-render-episode-14-sub.mp4" download>Baixar</a></button>
+  </div>
+
+  <div class="video-card">
+    <div class="video-title">SummerTime Render EPS 15</div>
+    <button onclick="openVideoPlayer('/static/summertime-render-episode-15-sub.mp4', 'SummerTime Render EPS 15')">Assistir</button>
+    <button><a href="static/summertime-render-episode-15-sub.mp4" download>Baixar</a></button>
+  </div>
+
+  <div class="video-card">
+    <div class="video-title">SummerTime Render EPS 16</div>
+    <button onclick="openVideoPlayer('/static/summertime-render-episode-16-sub.mp4', 'SummerTime Render EPS 16')">Assistir</button>
+    <button><a href="static/summertime-render-episode-16-sub.mp4" download>Baixar</a></button>
+  </div>
+
+  <div class="video-card">
+    <div class="video-title">SummerTime Render EPS 17</div>
+    <button onclick="openVideoPlayer('/static/summertime-render-episode-17-sub.mp4', 'SummerTime Render EPS 17')">Assistir</button>
+    <button><a href="static/summertime-render-episode-17-sub.mp4" download>Baixar</a></button>
+  </div>
+
+  <div class="video-card">
+    <div class="video-title">SummerTime Render EPS 18</div>
+    <button onclick="openVideoPlayer('/static/summertime-render-episode-18-sub.mp4', 'SummerTime Render EPS 18')">Assistir</button>
+    <button><a href="static/summertime-render-episode-18-sub.mp4" download>Baixar</a></button>
+  </div>
+
+  <div class="video-card">
+    <div class="video-title">SummerTime Render EPS 19</div>
+    <button onclick="openVideoPlayer('/static/summertime-render-episode-19-sub.mp4', 'SummerTime Render EPS 19')">Assistir</button>
+    <button><a href="static/summertime-render-episode-19-sub.mp4" download>Baixar</a></button>
+  </div>
+
+  <div class="video-card">
+    <div class="video-title">SummerTime Render EPS 20</div>
+    <button onclick="openVideoPlayer('/static/summertime-render-episode-20-sub.mp4', 'SummerTime Render EPS 20')">Assistir</button>
+    <button><a href="static/summertime-render-episode-20-sub.mp4" download>Baixar</a></button>
+  </div>
+
+  <div class="video-card">
+    <div class="video-title">SummerTime Render EPS 21</div>
+    <button onclick="openVideoPlayer('/static/summertime-render-episode-21-sub.mp4', 'SummerTime Render EPS 21')">Assistir</button>
+    <button><a href="static/summertime-render-episode-21-sub.mp4" download>Baixar</a></button>
+  </div>
+
+  <div class="video-card">
+    <div class="video-title">SummerTime Render EPS 22</div>
+    <button onclick="openVideoPlayer('/static/summertime-render-episode-22-sub.mp4', 'SummerTime Render EPS 22')">Assistir</button>
+    <button><a href="static/summertime-render-episode-22-sub.mp4" download>Baixar</a></button>
+  </div>
+
+  <div class="video-card">
+    <div class="video-title">SummerTime Render EPS 23</div>
+    <button onclick="openVideoPlayer('/static/summertime-render-episode-23-sub.mp4', 'SummerTime Render EPS 23')">Assistir</button>
+    <button><a href="static/summertime-render-episode-23-sub.mp4" download>Baixar</a></button>
+  </div>
+
+  <div class="video-card">
+    <div class="video-title">SummerTime Render EPS 24</div>
+    <button onclick="openVideoPlayer('/static/summertime-render-episode-24-sub.mp4', 'SummerTime Render EPS 24')">Assistir</button>
+    <button><a href="static/summertime-render-episode-24-sub.mp4" download>Baixar</a></button>
+  </div>
+
+  <div class="video-card">
+    <div class="video-title">SummerTime Render EPS 25</div>
+    <button onclick="openVideoPlayer('/static/summertime-render-episode-25-sub.mp4', 'SummerTime Render EPS 25')">Assistir</button>
+    <button><a href="static/summertime-render-episode-25-sub.mp4" download>Baixar</a></button>
+  </div>
+
+  </div>
+</body>
+</html>
